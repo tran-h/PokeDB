@@ -1,0 +1,28 @@
+.card-deck {
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+}
+  
+.card {
+    margin-top: 2rem;
+    padding: 1rem;
+    border-width: 2px;
+    border-color: #2b2b2b;
+    max-height: 450px;
+}
+.btn:hover {
+    color:white;
+    background-color: #2b2b2b;
+}
+  
+.card-body {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.container {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
