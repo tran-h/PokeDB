@@ -8,15 +8,15 @@ import { DataService } from '../data.service';
 })
 export class DatabaseComponent implements OnInit {
 
-  pokemon = [];
+  pokemon!:any[];
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
     this.dataService.getAllPokemon().subscribe(
-      data => {        
-        this.pokemon = data;
-        console.log(this.pokemon);
+      (data: any) => {        
+        console.log(data);
+        this.pokemon = data.results;
       },
       err => console.log(err)
     );
