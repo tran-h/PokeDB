@@ -1,0 +1,7 @@
+<div class="container">
+    <img src="{{getImage(id)}}" alt="IMAGE" />
+    <h5>Types:</h5>
+    <ul>
+        <li *ngFor="let t of types">{{t.type.name}}</li>
+    </ul>
+</div>

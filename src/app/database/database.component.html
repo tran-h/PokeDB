@@ -3,7 +3,9 @@
         <div class="card" *ngFor='let p of pokemon'>
             <img class="card-img-top" src="{{getImage(p.url.split('/')[6])}}" alt="IMAGE">
             <div class="card-body">
-                <a routerLink="" class="btn btn-default">#{{p.url.split('/')[6]}}: {{ p.name | titlecase }}</a>&nbsp;
+                <a routerLink="{{p.url.split('/')[6]}}" class="btn btn-default">
+                    #{{p.url.split('/')[6]}}: {{ p.name | titlecase }}
+                </a>&nbsp;
             </div>
         </div>
     </div>
