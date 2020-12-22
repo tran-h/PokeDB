@@ -10,7 +10,12 @@ import { DataService } from '../data.service';
 export class DetailsComponent implements OnInit {
 
   id: any;
+  height: any;
+  weight: any;
   types: any[] = [];
+  abilities: any[] = [];
+  stats: any[] = [];
+  moves: any[] = [];
 
   constructor(private ar: ActivatedRoute, private dataService: DataService) { }
 
@@ -18,8 +23,13 @@ export class DetailsComponent implements OnInit {
     this.id = this.ar.snapshot.paramMap.get("id");
 
     this.dataService.getPokemon(this.id).subscribe(
-      (data: any) => {      
+      (data: any) => {     
+        this.height = data.height;
+        this.weight = data.weight;
         this.types = data.types;
+        this.abilities = data.abilities;
+        this.stats = data.stats;
+        this.moves = data.moves;
       },
       err => console.log(err)
     );

@@ -1,7 +1,44 @@
 <div class="container">
-    <img src="{{getImage(id)}}" alt="IMAGE" />
-    <h5>Types:</h5>
-    <ul>
-        <li *ngFor="let t of types">{{t.type.name}}</li>
-    </ul>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{getImage(id)}}" alt="IMAGE" />
+        </div>
+        <div class="col-md-4" style="margin-top: 2rem; margin-left: 4rem;">
+            <h2>Pokemon Data</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><span class="font-weight-bold">Type: </span> <span
+                        *ngFor="let t of types">{{t.type.name | titlecase}} </span></li>
+                <li class="list-group-item"><span class="font-weight-bold">Abilities: </span> <span
+                        *ngFor="let a of abilities">{{a.ability.name | titlecase}} <span
+                            *ngIf="a.is_hidden">(Hidden)</span><br /></span></li>
+                <li class="list-group-item"><span class="font-weight-bold">Height: </span> {{height/10}} m</li>
+                <li class="list-group-item"><span class="font-weight-bold">Weight: </span> {{weight/10}} kg</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Base Stats</h2>
+            <ul class="list-group list-group-flush" style="margin-bottom: 2rem;">
+                <li class="list-group-item" *ngFor="let s of stats"><span class="font-weight-bold">{{s.stat.name |
+                        titlecase}} </span>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" [style.width]="s.base_stat/255*100 + '%'"
+                            attr.aria-valuenow="{{s.base_stat}}" aria-valuemin="0" aria-valuemax="255">{{s.base_stat}}
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Moves</h2>
+            <ul class="list-group list-group-flush" style="margin-bottom: 2rem;">
+                <li class="list-group-item" *ngFor="let m of moves"><span class="font-weight-bold">{{m.move.name |
+                        titlecase}} </span>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
