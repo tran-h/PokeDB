@@ -22,7 +22,7 @@ export class DatabaseComponent implements OnInit {
   }
 
   public getImage(id: number) {
-    return "https://pokeres.bastionbot.org/images/pokemon/" + id + ".png";
+    return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/" + id + ".png";
   }
 
 }

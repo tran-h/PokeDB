@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\database",
+    "\\src\\app\\details",
+    "\\src\\app\\home"
+  ],
+  "SelectedNode": "\\src\\app\\database\\database.component.scss",
+  "PreviewInSolutionExplorer": false
+}

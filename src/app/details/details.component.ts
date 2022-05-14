@@ -36,7 +36,7 @@ export class DetailsComponent implements OnInit {
   }
 
   public getImage(id: number) {
-    return "https://pokeres.bastionbot.org/images/pokemon/" + this.id + ".png";
+    return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/" + this.id + ".png";
   }
 
 }
